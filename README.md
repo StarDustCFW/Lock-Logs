@@ -2,6 +2,15 @@
 
 ## Lock-Logs
 * Stop sending telemetry to nintendo
+* Permanent modification of the save of [BCAT](https://switchbrew.org/wiki/BCAT_services)(Play Report)
+
+0x80000000000000A1
+
+0x80000000000000A2
+
+[Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
+
+this stops sending telemetry to nintendo
 
 ## Reason
 * 
