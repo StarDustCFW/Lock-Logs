@@ -15,5 +15,7 @@
 * devkitPro for the devkitA64 toolchain.
 
 ### Known Bugs
+* None
+
 <a href="https://discord.io/myrincon"><img src="icon.jpg" alt="Discord Server" /></a>
 
