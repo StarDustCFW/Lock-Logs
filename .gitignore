@@ -1,0 +1,12 @@
+build/*
+*.elf
+*.nro
+*.pfs0
+*.nso
+*.nacp
+*.nsp
+*.npdm
+img
+*.rar
+Haku33--88/*
+compile.cmd
