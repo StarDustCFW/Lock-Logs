@@ -13,10 +13,13 @@
 this stops sending telemetry to nintendo
 
 ## Reason
-* TEST
-*
+* Try to play online with CFW witout get banned
+* 
 
 ## Disclaimer
+* This is a test, despite being well tested, it may not be enough to avoid being banned, one thing is for sure, it stops sending telemetry through BCAT (PlayReport)
+* it is not likely to happen but in case of brick or instability in the system it can be uninstalled by deleting from 'System:/save'
+80000000000000A1 and 80000000000000A2
 
 ### Note:
 
