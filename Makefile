@@ -38,7 +38,7 @@ INCLUDES	:=	include
 EXEFS_SRC	:=	exefs_src
 APP_TITLE   :=	Lock-Logs
 APP_AUTHOR  := 	Kronos2308
-APP_VERSION := 	0.6
+APP_VERSION := 	1.0
 #ROMFS	:=	romfs
 
 #---------------------------------------------------------------------------------
