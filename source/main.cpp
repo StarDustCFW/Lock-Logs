@@ -26,27 +26,26 @@
 
 using namespace std;
 FsFileSystem loc;
-
 //traduction
-bool isSpanish()
+bool isSpanish = false;
+void set_LANG()
 {
 			setInitialize();
 			u64 lcode = 0;
-			s32 lang = 1;
+			SetLanguage lang;
 			setGetSystemLanguage(&lcode);
 			setMakeLanguage(lcode, &lang);
 				switch(lang)
 				{
 					case 5:
 					case 14:
-					return true;
+					isSpanish =  true;
 					   break;
 					default:
-					return false;
+					isSpanish =  false;
 						break;
 				}
 			setsysExit();
-		return false;
 }
 
 bool fileExists(const char* path)
@@ -64,8 +63,8 @@ bool fileExists(const char* path)
 bool led_on(void)
 {
 	Result rc=0;
-	size_t i;
-	size_t total_entries;
+	s32 i;
+	s32 total_entries;
 	u64 UniquePadIds[2];
 	HidsysNotificationLedPattern pattern;
 	hidsysExit();
@@ -111,8 +110,9 @@ void Lock(u64 TID)
 	mkdir("sdmc:/BCAT", 0777);
 	mkdir("sdmc:/BCAT/Antes", 0777);
 	mkdir("sdmc:/BCAT/Despues", 0777);
-	fsMount_SystemSaveData(&loc, TID);
-	fsdevMountDevice("save", loc);
+	AccountUid uid;
+	fsdevMountSystemSaveData("save", FsSaveDataSpaceId_System, TID,  uid);
+//	fsdevMountDevice("save", loc);
 	
 	sprintf(id,"sdmc:/BCAT/Antes/%016lX/",TID);
 	mkdir(id, 0777);
@@ -142,8 +142,8 @@ void install()
 	consoleUpdate(NULL);
 	Result rc;
 	pmshellInitialize();
-//	pmshellTerminateProcessByTitleId(0x010000000000000C);
-	if (R_FAILED(rc = pmshellTerminateProcessByTitleId(0x010000000000000C)))
+//	pmshellTerminateProgram(0x010000000000000C);
+	if (R_FAILED(rc = pmshellTerminateProgram(0x010000000000000C)))
     printf("\x1b[31;1m*\x1b[0m Error Klling BCAT\n");
 	else{
 	Lock(0x80000000000000A1);
@@ -153,7 +153,7 @@ void install()
 	led_on();
 	espera(5);
 	bpcInitialize();
-	bpcRebootSystem();
+//	bpcRebootSystem();
 	bpcExit();
 	}
 
@@ -173,33 +173,33 @@ void uninstall()
 		consoleUpdate(NULL);
 		Result rc;
 		pmshellInitialize();
-		if (R_FAILED(rc = pmshellTerminateProcessByTitleId(0x010000000000000C)))
+		if (R_FAILED(rc = pmshellTerminateProgram(0x010000000000000C)))
 		printf("\x1b[31;1m*\x1b[0m Error Klling BCAT\n");
 			
 		//Just in Case
-		pmshellTerminateProcessByTitleId(0x010000000000000E);//friends
-		pmshellTerminateProcessByTitleId(0x010000000000001E);//account
-		pmshellTerminateProcessByTitleId(0x010000000000001F);//ns
-		pmshellTerminateProcessByTitleId(0x0100000000000020);//nfc
-		pmshellTerminateProcessByTitleId(0x0100000000000022);//capsrv
-		pmshellTerminateProcessByTitleId(0x0100000000000024);//ssl
-		pmshellTerminateProcessByTitleId(0x0100000000000025);//nim
-		pmshellTerminateProcessByTitleId(0x010000000000002B);//erpt
-		pmshellTerminateProcessByTitleId(0x010000000000002E);//pctl
-		pmshellTerminateProcessByTitleId(0x010000000000002F);//npns
-		pmshellTerminateProcessByTitleId(0x0100000000000030);//eupld
-		pmshellTerminateProcessByTitleId(0x0100000000000033);//es
-		pmshellTerminateProcessByTitleId(0x0100000000000036);//creport
-		pmshellTerminateProcessByTitleId(0x010000000000003A);//migration
-		pmshellTerminateProcessByTitleId(0x010000000000003E);//olsc
-		pmshellTerminateProcessByTitleId(0x0100000000001000);//qlaunch - make freeze?
-		pmshellTerminateProcessByTitleId(0x0100000000001009);//miiEdit
+		pmshellTerminateProgram(0x010000000000000E);//friends
+		pmshellTerminateProgram(0x010000000000001E);//account
+		pmshellTerminateProgram(0x010000000000001F);//ns
+		pmshellTerminateProgram(0x0100000000000020);//nfc
+		pmshellTerminateProgram(0x0100000000000022);//capsrv
+		pmshellTerminateProgram(0x0100000000000024);//ssl
+		pmshellTerminateProgram(0x0100000000000025);//nim
+		pmshellTerminateProgram(0x010000000000002B);//erpt
+		pmshellTerminateProgram(0x010000000000002E);//pctl
+		pmshellTerminateProgram(0x010000000000002F);//npns
+		pmshellTerminateProgram(0x0100000000000030);//eupld
+		pmshellTerminateProgram(0x0100000000000033);//es
+		pmshellTerminateProgram(0x0100000000000036);//creport
+		pmshellTerminateProgram(0x010000000000003A);//migration
+		pmshellTerminateProgram(0x010000000000003E);//olsc
+		pmshellTerminateProgram(0x0100000000001000);//qlaunch - make freeze?
+		pmshellTerminateProgram(0x0100000000001009);//miiEdit
 
 
 		printf("\x1b[32;1m*\x1b[0m Mount System\n");
 		consoleUpdate(NULL);
 		FsFileSystem mySystem;
-		fsOpenBisFileSystem(&mySystem, FsBisStorageId_System, "");
+		fsOpenBisFileSystem(&mySystem, FsBisPartitionId_System, "");
 		fsdevMountDevice("sytem33", mySystem);
 		
 		//uninstall
@@ -219,12 +219,13 @@ void uninstall()
 		consoleUpdate(NULL);
 		espera(5);
 	bpcInitialize();
-	bpcRebootSystem();
+//	bpcRebootSystem();
 	bpcExit();
 }
 
 int main(int argc, char **argv)
 {
+set_LANG();
 	while (appletMainLoop())
 	{
 	    hidScanInput();
@@ -233,7 +234,7 @@ int main(int argc, char **argv)
 
 		consoleInit(NULL);
 			printf("\x1b[32;1m*\x1b[0m %s v%s Kronos2308, BCAT LOCKER\n",TITLE, VERSION);
-				if(isSpanish())
+				if(isSpanish)
 				{
 					printf("\n\x1b[30;1m SE BORRARAN Y BLOKEARAN LOS LOGS\x1b[0m\n");
 					printf("\n\x1b[30;1m ASI SE PODRA JUGAR ONLINE SIN SER BANEADO\x1b[0m\n");
