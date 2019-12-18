@@ -22,7 +22,11 @@ this stops sending telemetry to nintendo
 80000000000000A1 and 80000000000000A2
 
 ### Note:
-
+Tested on:
+8.1.0 Need to update
+9.0.1 Need to update
+9.1.0 OK
+For use this mod you need update to the latest version required by Nintendo
 
 ### Credits
 * devkitPro for the devkitA64 toolchain.
