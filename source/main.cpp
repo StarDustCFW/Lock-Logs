@@ -112,7 +112,6 @@ void Lock(u64 TID)
 	mkdir("sdmc:/BCAT/Despues", 0777);
 	AccountUid uid;
 	fsdevMountSystemSaveData("save", FsSaveDataSpaceId_System, TID,  uid);
-//	fsdevMountDevice("save", loc);
 	
 	sprintf(id,"sdmc:/BCAT/Antes/%016lX/",TID);
 	mkdir(id, 0777);
@@ -137,12 +136,11 @@ void Lock(u64 TID)
 
 void install()
 {
-	
+	//close BCAT ,lock and reboot
 	printf("\x1b[32;1m*\x1b[0m Klling BCAT proc\n");
 	consoleUpdate(NULL);
 	Result rc;
 	pmshellInitialize();
-//	pmshellTerminateProgram(0x010000000000000C);
 	if (R_FAILED(rc = pmshellTerminateProgram(0x010000000000000C)))
     printf("\x1b[31;1m*\x1b[0m Error Klling BCAT\n");
 	else{
@@ -153,7 +151,7 @@ void install()
 	led_on();
 	espera(5);
 	bpcInitialize();
-//	bpcRebootSystem();
+	bpcRebootSystem();
 	bpcExit();
 	}
 
@@ -219,7 +217,7 @@ void uninstall()
 		consoleUpdate(NULL);
 		espera(5);
 	bpcInitialize();
-//	bpcRebootSystem();
+	bpcRebootSystem();
 	bpcExit();
 }
 
@@ -260,7 +258,6 @@ set_LANG();
 				}
 		consoleUpdate(NULL);
 		
-//		if ((kDown & KEY_ZL || kDown & KEY_ZR || kDown & KEY_MINUS || kDown & KEY_PLUS) && (kHeld & KEY_ZL && kHeld & KEY_ZR && kHeld & KEY_MINUS && kHeld & KEY_PLUS))
 		if (kDown & KEY_A)
 		{
 			install();
