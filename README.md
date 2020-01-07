@@ -13,7 +13,7 @@
 this stops sending telemetry to nintendo
 
 ## Reason
-* Try to go online with CFW witout get banned
+* kill telemetry service banned
 * 
 
 ## Disclaimer
