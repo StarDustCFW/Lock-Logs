@@ -17,7 +17,7 @@ this stops sending telemetry to nintendo
 * 
 
 ## Disclaimer
-* This is a test, despite being well tested, it may not be enough to avoid being banned, one thing is for sure, it stops sending telemetry through BCAT (PlayReport)
+* This is a test, despite being well tested, It is risky use emunand insteed, one thing is for sure, it stops sending telemetry through BCAT (PlayReport)
 * it is not likely to happen but in case of instability in the system it can be uninstalled by deleting from 'System:/save'
 80000000000000A1 and 80000000000000A2
 
