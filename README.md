@@ -13,7 +13,7 @@
 this stops sending telemetry to nintendo
 
 ## Reason
-* Try to play online with CFW witout get banned
+* Try to go online with CFW witout get banned
 * 
 
 ## Disclaimer
@@ -23,9 +23,7 @@ this stops sending telemetry to nintendo
 
 ### Note:
 Tested on:
-* 8.1.0 Need to update
-* 9.0.1 Need to update
-* 9.1.0 OK
+* 9.1.0 Only
 * * For use this mod you need update to the latest version required by Nintendo
 
 ### Credits
