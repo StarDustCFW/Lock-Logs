@@ -13,7 +13,7 @@
 this stops sending telemetry to nintendo
 
 ## Reason
-* kill telemetry service banned
+* kill telemetry service to avoid get banned
 * 
 
 ## Disclaimer
