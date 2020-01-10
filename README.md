@@ -13,18 +13,26 @@
 this stops sending telemetry to nintendo
 
 ## Reason
-* kill telemetry service to avoid get banned
-* 
+* kill telemetry service to avoid get banned with cfw
+
 
 ## Disclaimer
-* This is a test, despite being well tested, It is risky use emunand insteed, one thing is for sure, it stops sending telemetry through BCAT (PlayReport)
-* it is not likely to happen but in case of instability in the system it can be uninstalled by deleting from 'System:/save'
-80000000000000A1 and 80000000000000A2
+* After a long time of testing, a console that did not send that telemetry is harder to ban than other consoles that did
+* * Even so, the risk of ban exists so I recommend using emunand, if you don't want to take that risk
+* This is a test, one thing is for sure, it stop the send telemetry through BCAT(PlayReport)
+* It is not likely to happen but in case of instability in the system it can be uninstalled by Pressing + - inside the app or deleting from 'System:/save'
+80000000000000A1 and 80000000000000A2 saves
 
 ### Note:
 Tested on:
 * 9.1.0 Only
 * * For use this mod you need update to the latest version required by Nintendo
+* This modification will remain installed and will not be deleted until you decide to remove it
+#### It will only be removed if:
+- - uninstall it from the app
+- - remove the saves 80000000000000A1 and 80000000000000A2
+- - restoring a nand backup
+- - using Haku33
 
 ### Credits
 * devkitPro for the devkitA64 toolchain.
