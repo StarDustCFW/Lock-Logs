@@ -25,7 +25,7 @@ this stops sending telemetry to nintendo
 
 ### Note:
 Tested on:
-* 9.1.0 Only
+* 9.1.0 - 10.0.0
 * * For use this mod you need update to the latest version required by Nintendo
 * This modification will remain installed and will not be deleted until you decide to remove it
 #### It will only be removed if:
