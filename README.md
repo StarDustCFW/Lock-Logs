@@ -1,7 +1,7 @@
 <a href="https://discord.io/myrincon"><img src="https://discordapp.com/api/guilds/516631805621960704/embed.png" alt="Discord Server" /></a>
 
 ## Lock-Logs
-* Stop sending telemetry to nintendo
+* Stop sending telemetry to Nintendo
 * Permanent modification of the save of [BCAT](https://switchbrew.org/wiki/BCAT_services)(Play Report)
 
 0x80000000000000A1
@@ -10,7 +10,7 @@
 
 [Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
 
-this stops sending telemetry to nintendo
+* This stops sending telemetry to Nintendo
 
 ## Reason
 * kill telemetry service to avoid get banned with cfw
@@ -25,14 +25,14 @@ this stops sending telemetry to nintendo
 
 ### Note:
 Tested on:
-* 9.1.0 - 10.0.0
+* 9.1.0 - 10.0.2
 * * For use this mod you need update to the latest version required by Nintendo
 * This modification will remain installed and will not be deleted until you decide to remove it
 #### It will only be removed if:
-- - uninstall it from the app
-- - remove the saves 80000000000000A1 and 80000000000000A2
-- - restoring a nand backup
-- - using Haku33
+- - Uninstall it from the app
+- - Remove the saves 80000000000000A1 and 80000000000000A2
+- - Restoring a nand backup
+- - Using Haku33
 
 ### Credits
 * devkitPro for the devkitA64 toolchain.
