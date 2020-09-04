@@ -1,6 +1,6 @@
 <a href="https://discord.io/myrincon"><img src="https://discordapp.com/api/guilds/516631805621960704/embed.png" alt="Discord Server" /></a>
 
-## Lock-Logs
+## Lock-Logs  (L-L)
 * Stop sending telemetry to Nintendo
 * Permanent modification of the save of [BCAT](https://switchbrew.org/wiki/BCAT_services)(Play Report)
 
