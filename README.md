@@ -25,7 +25,7 @@
 
 ### Note:
 Tested on:
-* 9.1.0 - 11.0.1
+* 9.1.0 - 13.0.0
 * * For use this mod you need update to the latest version required by Nintendo
 * This modification will remain installed and will not be deleted until you decide to remove it
 #### It will only be removed if:
