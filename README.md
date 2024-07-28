@@ -54,8 +54,10 @@ Tested on:
 
 WHAT IS SAFE:
 
-Hacking and mods online: ✅ 
-  this is safe as long as their is no reporting in the game (and also if the game servers log everything but most likely they dont)
+# Hacking and mods online: ✅ 
+ ## this is safe as long as their is no reporting in the game (and also if the game servers log everything but most likely they dont)
 
-Cracked games: ❔
-This is sort of safe, if you wanna use cracked games and not get banned make sure to turn wifi off to turn off aauth or block it using a proxy then close the game          restart the switch and turn wifi back on to use cracked games safely (i do not endorse piracy but this is what would have to be done to use them and not get banned
+# Cracked games: ❔
+  ## This is sort of safe, if you wanna use cracked games and not get banned make sure to turn wifi off before opening said cracked game to turn off aauth or block it using a   
+  ## proxy then close the game
+  ## restart the switch and turn wifi back on when done playing to use cracked games safely (i do not endorse piracy but this is what would have to be done to use them and not get banned)
