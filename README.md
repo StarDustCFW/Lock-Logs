@@ -3,7 +3,7 @@
 this fork was created to also kill a0 to stop system information
 because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
 
-<a href="https://discord.gg/9MsZ5cmR7U"><img src="https://discordapp.com/api/guilds/516631805621960704/embed.png" alt="Discord Server" /></a>
+<a href="https://discord.gg/9MsZ5cmR7U" alt="Discord Server" ></a>
 
 ## Lock-Logs  (L-L)
 * Stop sending telemetry to Nintendo
