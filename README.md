@@ -3,15 +3,17 @@
 this fork was created to also kill a0 to stop system information
 because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
 
-<a href="https://discord.gg/9MsZ5cmR7U" alt="Discord Server" ></a>
+
 
 ## Lock-Logs  (L-L)
 * Stop sending telemetry to Nintendo
 * Permanent modification of the save of [BCAT](https://switchbrew.org/wiki/BCAT_services)(Play Report)
 
-0x80000000000000A1
+0x80000000000000A0 (stop system information being sent over to avoid ban after unban)
 
-0x80000000000000A2
+0x80000000000000A1 (stop bannable telemetry)
+
+0x80000000000000A2 (stop bannable telemetry
 
 [Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
 
