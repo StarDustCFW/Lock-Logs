@@ -2,7 +2,7 @@
 
 this fork was created to also kill a0 to stop system information
 because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
-
+yes switch unbanning is possible and very easy to do, literally the last thing to do and the hardest is.. telemetry 
 
 
 ## Lock-Logs  (L-L)
@@ -13,7 +13,7 @@ because... when you unban a switch you dont want to send over banned info while 
 
 0x80000000000000A1 (stop bannable telemetry)
 
-0x80000000000000A2 (stop bannable telemetry
+0x80000000000000A2 (stop bannable telemetry)
 
 [Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
 
