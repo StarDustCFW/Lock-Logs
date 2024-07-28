@@ -2,6 +2,7 @@
 
 this fork was created to also kill a0 to stop system information
 because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
+  until the dev who made this adds this fork via pull request then this fork will stay up
 
 yes switch unbanning is possible and very easy to do, literally the last thing to do and the hardest is.. telemetry 
 
@@ -18,7 +19,7 @@ yes switch unbanning is possible and very easy to do, literally the last thing t
 
 [Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
 
-* This stops sending telemetry to Nintendo
+* This stops sending telemetry and system information to Nintendo to avoid bans after unbanning your switch ([Guide](https://github.com/erew70/SWITCH-UNBAN-GUIDE)
 
 ## Reason
 * kill telemetry service to avoid get banned with cfw
