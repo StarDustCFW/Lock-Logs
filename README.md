@@ -2,7 +2,7 @@
 
 this fork was created to also kill a0 to stop system information
 because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
-  until the dev who made this adds this fork via pull request then this fork will stay up
+        until the dev who made this adds this fork via pull request then this fork will stay up
 
 yes switch unbanning is possible and very easy to do, literally the last thing to do and the hardest is.. telemetry 
 
