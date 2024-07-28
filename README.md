@@ -1,3 +1,8 @@
+# why this fork
+
+this fork was created to also kill a0 to stop system information
+because... when you unban a switch you dont want to send over banned info while using donor info to authenticate :(
+
 <a href="https://discord.io/myrincon"><img src="https://discordapp.com/api/guilds/516631805621960704/embed.png" alt="Discord Server" /></a>
 
 ## Lock-Logs  (L-L)
