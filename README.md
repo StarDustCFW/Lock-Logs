@@ -20,7 +20,7 @@ yes switch unbanning is possible and very easy to do, literally the last thing t
 
 [Source](https://switchbrew.org/wiki/Flash_Filesystem#System_Savegames)
 
-* This stops sending telemetry and system information to Nintendo to avoid bans after unbanning your switch ([Guide](https://github.com/erew70/SWITCH-UNBAN-GUIDE)
+* This stops sending telemetry and system information to Nintendo to avoid bans after unbanning your switch ([Guide](https://github.com/erew70/SWITCH-UNBAN-GUIDE))
 
 ## Reason
 * kill telemetry service to avoid get banned with cfw
