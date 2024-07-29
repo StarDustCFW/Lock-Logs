@@ -31,17 +31,17 @@ yes switch unbanning is possible and very easy to do, literally the last thing t
 * * Even so, the risk of ban exists so I recommend using emunand, if you don't want to take that risk
 * This is a test, one thing is for sure, it stop the send telemetry through BCAT(PlayReport)
 * It is not likely to happen but in case of instability in the system it can be uninstalled by Pressing + - inside the app or deleting from 'System:/save'
-80000000000000A1 and 80000000000000A2 saves
+80000000000000A0, 80000000000000A1, and 80000000000000A2 saves using NxNandManager
 
 ### Note:
 Tested on:
-* 9.1.0 - 13.0.0
+* 9.1.0 - 17.0.0
 * * For use this mod you need update to the latest version required by Nintendo
 * This modification will remain installed and will not be deleted until you decide to remove it
 #### It will only be removed if:
 - - Uninstall it from the app
-- - Remove the saves 80000000000000A1 and 80000000000000A2
-- - Restoring a nand backup
+- - Remove the saves 80000000000000A0, 80000000000000A1, and 80000000000000A2
+- - Restoring a nand backup before installing
 - - Using Haku33
 
 ### Credits
