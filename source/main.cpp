@@ -23,9 +23,8 @@
 #include <stdlib.h>
 #include <stdlib.h>
 #include "FileSystem.hpp"
-
+#include "led.hpp"
 using namespace std;
-FsFileSystem loc;
 //traduction
 bool isSpanish = false;
 void set_LANG()
@@ -59,39 +58,6 @@ bool fileExists(const char* path)
 	return false;
 }
 
-
-bool led_on(void)
-{
-	Result rc=0;
-	s32 i;
-	s32 total_entries;
-	u64 UniquePadIds[2];
-	HidsysNotificationLedPattern pattern;
-	hidsysExit();
-	rc = hidsysInitialize();
-	if (R_FAILED(rc)) {printf("hidsysInitialize(): 0x%x\n", rc);}
-
-	memset(&pattern, 0, sizeof(pattern));
-	// Setup Breathing effect pattern data.
-	pattern.baseMiniCycleDuration = 0x8;             // 100ms.
-	pattern.totalMiniCycles = 0x2;                   // 3 mini cycles. Last one 12.5ms.
-	pattern.totalFullCycles = 0x6;                   // Repeat Time.
-	pattern.startIntensity = 0x2;                    // 13%.
-
-	pattern.miniCycles[0].ledIntensity = 0xF;        // 100%.
-	pattern.miniCycles[0].transitionSteps = 0xF;     // 15 steps. Transition time 1.5s.
-	pattern.miniCycles[0].finalStepDuration = 0x0;   // Forced 12.5ms.
-	pattern.miniCycles[1].ledIntensity = 0x2;        // 13%.
-	pattern.miniCycles[1].transitionSteps = 0xF;     // 15 steps. Transition time 1.5s.
-	pattern.miniCycles[1].finalStepDuration = 0x0;   // Forced 12.5ms.
-	
-	rc = hidsysGetUniquePadsFromNpad(hidGetHandheldMode() ? CONTROLLER_HANDHELD : CONTROLLER_PLAYER_1, UniquePadIds, 2, &total_entries);
-	if (R_SUCCEEDED(rc)) 
-	{for(i=0; i<total_entries; i++) { rc = hidsysSetNotificationLedPattern(&pattern, UniquePadIds[i]);}}
-	
-	hidsysExit();
-	return 0;
-}
 
 void espera(u32 timeS)
 {
@@ -130,8 +96,6 @@ void Lock(u64 TID)
 	
 	fsdevCommitDevice("save");
 	fsdevUnmountDevice("save"); 
-	fsFsClose(&loc);
-
 }
 
 void install()
@@ -148,7 +112,7 @@ void install()
 	Lock(0x80000000000000A2);
 	printf("\x1b[32;1m*\x1b[0m W COMPLETE\n");
 	consoleUpdate(NULL);
-	led_on();
+	led_on(1);
 	espera(5);
 	bpcInitialize();
 	bpcRebootSystem();
@@ -224,11 +188,21 @@ void uninstall()
 int main(int argc, char **argv)
 {
 set_LANG();
+	PadState pad;
+	padConfigureInput(8, HidNpadStyleSet_NpadStandard);
+    padInitializeDefault(&pad);
+
+
 	while (appletMainLoop())
 	{
+		/*
 	    hidScanInput();
         u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
         u64 kHeld = hidKeysHeld(CONTROLLER_P1_AUTO);
+		*/
+		padUpdate(&pad);
+        u64 kDown = padGetButtonsDown(&pad);
+        u64 kHeld = padGetButtons(&pad);
 
 		consoleInit(NULL);
 			printf("\x1b[32;1m*\x1b[0m %s v%s Kronos2308, BCAT LOCKER\n",TITLE, VERSION);
@@ -258,20 +232,20 @@ set_LANG();
 				}
 		consoleUpdate(NULL);
 		
-		if (kDown & KEY_A)
+		if (kDown & HidNpadButton_A)
 		{
 			install();
 			break;
 		}
 
-		if ((kDown & KEY_MINUS || kDown & KEY_PLUS) && (kHeld & KEY_MINUS && kHeld & KEY_PLUS))
+		if ((kDown & HidNpadButton_Minus || kDown & HidNpadButton_Plus) && (kHeld & HidNpadButton_Minus && kHeld & HidNpadButton_Plus))
 		{
 			uninstall();
 			break;
 		}
 
 
-		if (kDown & KEY_B || kDown & KEY_Y || kDown & KEY_X)
+		if (kDown & HidNpadButton_B || kDown & HidNpadButton_Y || kDown & HidNpadButton_X)
 		{
 			break;
 		}
